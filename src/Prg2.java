@@ -1,34 +1,27 @@
+/* File: Prg2.java
+ * Note: Java program to implement a Singly Linked List
+ */
 import java.io.*;
-
-// Java program to implement 
-// a Singly Linked List 
 public class Prg2 {
-
-    Node head; // head of list 
-
+    Node head; // head of list
     // Linked list Node. 
     // This inner class is made static 
     // so that main() can access it 
     static class Node {
-
         int data;
         Node next;
-
         // Constructor 
-        Node(int d)
-        {
+        Node(int d) {
             data = d;
             next = null;
         }
     }
 
     // Method to insert a new node 
-    public static Prg2 insert(Prg2 list, int data)
-    {
-        // Create a new node with given data 
+    public static Prg2 insert(Prg2 list, int data) {
+        // Create a new node with given data
         Node new_node = new Node(data);
         new_node.next = null;
-
         // If the Linked List is empty, 
         // then make the new node as head 
         if (list.head == null) {
@@ -41,11 +34,9 @@ public class Prg2 {
             while (last.next != null) {
                 last = last.next;
             }
-
             // Insert the new_node at last node 
             last.next = new_node;
         }
-
         // Return the list by head 
         return list;
     }
@@ -54,31 +45,23 @@ public class Prg2 {
     public static void printList(Prg2 list)
     {
         Node currNode = list.head;
-
         System.out.print("Prg2: ");
-
         // Traverse through the Prg2 
         while (currNode != null) {
             // Print the data at current node 
             System.out.print(currNode.data + " ");
-
             // Go to next node 
             currNode = currNode.next;
         }
     }
 
-    // **************MAIN METHOD************** 
-
+    // **************MAIN METHOD**************
     // method to create a Singly linked list with n nodes 
     public static void main(String[] args)
     {
         /* Start with the empty list. */
         Prg2 list = new Prg2();
-
-        // 
-        // ******INSERTION****** 
-        // 
-
+        // ******INSERTION******
         // Insert the values 
         list = insert(list, 1);
         list = insert(list, 2);
@@ -88,8 +71,7 @@ public class Prg2 {
         list = insert(list, 6);
         list = insert(list, 7);
         list = insert(list, 8);
-
-        // Print the Prg2 
+        // Print the Prg2
         printList(list);
     }
 }

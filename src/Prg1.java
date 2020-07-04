@@ -1,19 +1,15 @@
+/* File: Prg1.java
+ * Note: Java program to implement a Singly Linked List
+ */
 import java.io.*;
-
-// Java program to implement
-// a Singly Linked List
 public class Prg1 {
-
     Node head; // head of list
-
     // Linked list Node.
     // This inner class is made static
     // so that main() can access it
     static class Node {
-
         int data;
         Node next;
-
         // Constructor
         Node(int d) {
             data = d;
@@ -26,7 +22,6 @@ public class Prg1 {
         // Create a new node with given data
         Node new_node = new Node(data);
         new_node.next = null;
-
         // If the Linked List is empty,
         // then make the new node as head
         if (list.head == null) {
@@ -38,11 +33,9 @@ public class Prg1 {
             while (last.next != null) {
                 last = last.next;
             }
-
             // Insert the new_node at last node
             last.next = new_node;
         }
-
         // Return the list by head
         return list;
     }
@@ -50,14 +43,11 @@ public class Prg1 {
     // Method to print the Prg1.
     public static void printList(Prg1 list) {
         Node currNode = list.head;
-
         System.out.print("Prg1: ");
-
         // Traverse through the Prg1
         while (currNode != null) {
             // Print the data at current node
             System.out.print(currNode.data + " ");
-
             // Go to next node
             currNode = currNode.next;
         }
@@ -67,9 +57,7 @@ public class Prg1 {
     public static void main(String[] args) {
         /* Start with the empty list. */
         Prg1 list = new Prg1();
-
         // ******INSERTION******
-
         // Insert the values
         list = insert(list, 1);
         list = insert(list, 2);
@@ -79,7 +67,6 @@ public class Prg1 {
         list = insert(list, 6);
         list = insert(list, 7);
         list = insert(list, 8);
-
         // Print the Prg1
         printList(list);
     }

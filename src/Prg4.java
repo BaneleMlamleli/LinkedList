@@ -1,19 +1,15 @@
+/* File: Prg4.java
+ * Note: Java program to implement a Singly Linked List
+ */
 import java.io.*;
-
-// Java program to implement
-// a Singly Linked List
 public class Prg4 {
-
     Node head; // head of list
-
     // Linked list Node.
     // This inner class is made static
     // so that main() can access it
     static class Node {
-
         int data;
         Node next;
-
         // Constructor
         Node(int d) {
             data = d;
@@ -38,11 +34,9 @@ public class Prg4 {
             while (last.next != null) {
                 last = last.next;
             }
-
             // Insert the new_node at last node
             last.next = new_node;
         }
-
         // Return the list by head
         return list;
     }
@@ -50,18 +44,14 @@ public class Prg4 {
     // Method to print the Prg4.
     public static void printList(Prg4 list) {
         Node currNode = list.head;
-
         System.out.print("Prg4: ");
-
         // Traverse through the Prg4
         while (currNode != null) {
             // Print the data at current node
             System.out.print(currNode.data + " ");
-
             // Go to next node
             currNode = currNode.next;
         }
-
         System.out.println();
     }
 
@@ -70,24 +60,18 @@ public class Prg4 {
         // Store head node
         Node currNode = list.head, prev = null;
 
-        //
         // CASE 1:
         // If index is 0, then head node itself is to be deleted
-
         if (index == 0 && currNode != null) {
             list.head = currNode.next; // Changed head
-
             // Display the message
             System.out.println(index + " position element deleted");
-
             // Return the updated List
             return list;
         }
 
-        //
         // CASE 2:
         // If the index is greater than 0 but less than the size of Prg4
-        //
         // The counter
         int counter = 0;
 
@@ -95,12 +79,10 @@ public class Prg4 {
         // keep track of the previous node
         // as it is needed to change currNode.next
         while (currNode != null) {
-
             if (counter == index) {
                 // Since the currNode is the required position
                 // Unlink currNode from linked list
                 prev.next = currNode.next;
-
                 // Display the message
                 System.out.println(index + " position element deleted");
                 break;
@@ -115,30 +97,24 @@ public class Prg4 {
 
         // If the position element was found, it should be at currNode
         // Therefore the currNode shall not be null
-        //
+
         // CASE 3: The index is greater than the size of the Prg4
-        //
         // In this case, the currNode should be null
         if (currNode == null) {
             // Display the message
             System.out.println(index + " position element not found");
         }
-
         // return the List
         return list;
     }
 
     // **************MAIN METHOD**************
-
     // method to create a Singly linked list with n nodes
     public static void main(String[] args) {
         /* Start with the empty list. */
         Prg4 list = new Prg4();
 
-        //
         // ******INSERTION******
-        //
-
         // Insert the values
         list = insert(list, 1);
         list = insert(list, 2);
@@ -152,10 +128,7 @@ public class Prg4 {
         // Print the Prg4
         printList(list);
 
-        //
         // ******DELETION AT POSITION******
-        //
-
         // Delete node at position 0
         // In this case the key is ***at head***
         deleteAtPosition(list, 0);
