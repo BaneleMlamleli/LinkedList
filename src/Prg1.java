@@ -3,10 +3,8 @@
  */
 import java.io.*;
 public class Prg1 {
-    Node head; // head of list
-    // Linked list Node.
-    // This inner class is made static
-    // so that main() can access it
+    Node head; // head of list Linked list Node.
+    // This inner class is made static so that main() can access it
     static class Node {
         int data;
         Node next;
@@ -22,13 +20,11 @@ public class Prg1 {
         // Create a new node with given data
         Node new_node = new Node(data);
         new_node.next = null;
-        // If the Linked List is empty,
-        // then make the new node as head
+        // If the Linked List is empty, then make the new node as head
         if (list.head == null) {
             list.head = new_node;
         } else {
-            // Else traverse till the last node
-            // and insert the new_node there
+            // Else traverse till the last node and insert the new_node there
             Node last = list.head;
             while (last.next != null) {
                 last = last.next;
@@ -40,7 +36,7 @@ public class Prg1 {
         return list;
     }
 
-    // Method to print the Prg1.
+    // Method to print the linked list.
     public static void printList(Prg1 list) {
         Node currNode = list.head;
         System.out.print("Prg1: ");

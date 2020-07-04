@@ -3,10 +3,8 @@
  */
 import java.io.*;
 public class Prg4 {
-    Node head; // head of list
-    // Linked list Node.
-    // This inner class is made static
-    // so that main() can access it
+    Node head; // head of list Linked list Node.
+    // This inner class is made static so that main() can access it
     static class Node {
         int data;
         Node next;
@@ -22,14 +20,11 @@ public class Prg4 {
         // Create a new node with given data
         Node new_node = new Node(data);
         new_node.next = null;
-
-        // If the Linked List is empty,
-        // then make the new node as head
+        // If the Linked List is empty, then make the new node as head
         if (list.head == null) {
             list.head = new_node;
         } else {
-            // Else traverse till the last node
-            // and insert the new_node there
+            // Else traverse till the last node and insert the new_node there
             Node last = list.head;
             while (last.next != null) {
                 last = last.next;
@@ -55,13 +50,12 @@ public class Prg4 {
         System.out.println();
     }
 
-    // Method to delete a node in the Prg4 by POSITION
+    // Method to delete a node in the linked list by POSITION
     public static Prg4 deleteAtPosition(Prg4 list, int index) {
         // Store head node
         Node currNode = list.head, prev = null;
 
-        // CASE 1:
-        // If index is 0, then head node itself is to be deleted
+        // CASE 1: If index is 0, then head node itself is to be deleted
         if (index == 0 && currNode != null) {
             list.head = currNode.next; // Changed head
             // Display the message
@@ -70,36 +64,27 @@ public class Prg4 {
             return list;
         }
 
-        // CASE 2:
-        // If the index is greater than 0 but less than the size of Prg4
-        // The counter
+        // CASE 2: If the index is greater than 0 but less than the size of linked list in the counter
         int counter = 0;
-
-        // Count for the index to be deleted,
-        // keep track of the previous node
-        // as it is needed to change currNode.next
+        // Count for the index to be deleted, keep track of the previous node as it is needed to change currNode.next
         while (currNode != null) {
             if (counter == index) {
-                // Since the currNode is the required position
-                // Unlink currNode from linked list
+                // Since the currNode is the required position Unlink currNode from linked list
                 prev.next = currNode.next;
                 // Display the message
                 System.out.println(index + " position element deleted");
                 break;
             } else {
-                // If current position is not the index
-                // continue to next node
+                // If current position is not the index continue to next node
                 prev = currNode;
                 currNode = currNode.next;
                 counter++;
             }
         }
 
-        // If the position element was found, it should be at currNode
-        // Therefore the currNode shall not be null
+        // If the position element was found, it should be at currNode, therefore the currNode shall not be null
 
-        // CASE 3: The index is greater than the size of the Prg4
-        // In this case, the currNode should be null
+        // CASE 3: The index is greater than the size of the  linked list in this case, the currNode should be null
         if (currNode == null) {
             // Display the message
             System.out.println(index + " position element not found");
